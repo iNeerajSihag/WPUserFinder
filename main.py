@@ -40,7 +40,6 @@ def main():
     print_and_write(None, "WPUserFinder - WordPress Open-Source Intelligence (OSINT) Tool")
     print_and_write(None, "Author - Neeraj Sihag")
     print_and_write(None, "GitHub - https://github.com/iNeerajSihag")
-    # Please support me by Starring project and forking it.
     print_and_write(None, f"+---+---+---+---+---+---+---+---+---+---+")
     while True:
         website_url = input("Enter URL of WordPress site (include http:// or https://). Eg - https://website.com : ")
@@ -74,7 +73,6 @@ def main():
         file = open(filename, 'w')
 
     print_and_write(file, f"+---+---+---+---+---+---+---+---+---+---+")
-    print_and_write(file, "WPUserFinder - WordPress Open-Source Intelligence (OSINT) Tool")
     print_and_write(file, "Author - Neeraj Sihag")
     print_and_write(file, "GitHub - https://github.com/iNeerajSihag")
     print_and_write(file, f"+---+---+---+---+---+---+---+---+---+---+")
@@ -96,7 +94,10 @@ def main():
             print_and_write(file, f"\tUrl - {user_info['link']}")
             print_and_write(file, f"\tDescription - {user_info['description']}")
             print_and_write(file, f"\tSlug - {user_info['slug']}")
-            print_and_write(file, f"\tAvatar - {user_info['avatar_urls']['96']}")
+            if 'avatar_urls' in user_info and '96' in user_info['avatar_urls']:
+                print_and_write(file, f"\tAvatar - {user_info['avatar_urls']['96']}")
+            else:
+                print_and_write(file, "\tAvatar - Not available")
             print_and_write(file, f"\tFull Information - {json.dumps(user_info, indent=4)}")
         else:
             print_and_write(file, "User not found")
