@@ -29,8 +29,8 @@ This tool requires Python 3 and the `requests` library. You can install the `req
 
 1. Clone the repository: `git clone https://github.com/iNeerajSihag/WPUserFinder.git`
 2. Navigate to the cloned repository: `cd WPUserFinder`
-3. Install dependencies : `pip install requests`
-4. Run the tool: `python main.py`
+3. Install dependencies : `pip install requests` or `pip install -r requirements.txt`
+4. Run the tool: `python main.py` or `python3 main.py`
 5. Follow the prompts to enter the URL of the WordPress website and the number of users to check.
 
 ## Author
